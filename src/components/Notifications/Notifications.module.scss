@@ -1,0 +1,28 @@
+@import "@styles/globals.scss";
+
+.notificationPanel {
+    background-color: $bgColor;
+    width: calc(100% - $paddingSmall * 2);
+    padding: $paddingSmall;
+
+    .notice {
+        border: solid 1px;
+        margin: $paddingSmall 0;
+        min-height: 48px;
+        .icon {
+            float: left;
+            padding: $paddingSmall;
+        }
+        .header {
+            display: inline-block;
+            padding: $paddingSmall 0;
+            input {
+                display: inline;
+            }
+        }
+    }
+
+    .addBtn {
+        text-align: right;
+    }
+}

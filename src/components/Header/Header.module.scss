@@ -1,0 +1,19 @@
+@import "@styles/globals.scss";
+
+.header {
+    border-bottom: solid 1px;
+    position: relative;
+    .time {
+        text-align: center;
+    }
+    .status {
+        position: absolute;
+        right: 8px;
+        top: 0;
+    }
+    .notifications {
+        position: absolute;
+        top: 23px;
+        width: 100%;
+    }
+}

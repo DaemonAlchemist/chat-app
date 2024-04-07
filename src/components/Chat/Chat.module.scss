@@ -1,0 +1,51 @@
+@import "@styles/globals.scss";
+
+.chat {
+    position: relative;
+    height: calc(100vh - 74px);
+    .bgColorPicker {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        z-index: 999;
+    }
+    h1 {
+        margin: 0;
+        text-align: center;
+    }
+    .messages {
+        .message {
+            > div {
+                position: relative;
+                display: inline-block;
+                border: solid 1px;
+                margin: 16px;
+                border-radius: 16px;
+                padding: 8px;
+                .colorPicker {
+                    position: absolute;
+                    left: -1px;
+                    bottom: -22px;
+                }
+            }
+            &.left {
+                text-align: left;
+                div {
+                    border-bottom-left-radius: 0;
+                    margin-right: 0;
+                }
+            }
+            &.right {
+                text-align: right;
+                div {
+                    border-bottom-right-radius: 0;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .addBtn {
+        text-align: center;
+        button {font-size: x-large;}
+    }
+}

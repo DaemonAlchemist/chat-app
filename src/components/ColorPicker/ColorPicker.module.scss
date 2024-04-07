@@ -1,0 +1,14 @@
+.pickerButton {
+    display: inline-block;
+    border: solid 1px black;
+    width: 1em;
+    height: 1em;
+    margin: 0;
+}
+
+.picker {
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
+    z-index: 9999;
+}
