@@ -5,8 +5,6 @@
     width: calc(100% - $paddingSmall * 2);
     padding: $paddingSmall;
     padding-top: 32px;
-    border-bottom-left-radius: $paddingSmall;
-    border-bottom-right-radius: $paddingSmall;
     max-height: calc(100vh - 97px);
     overflow-y: scroll;
     scrollbar-width: thin;
