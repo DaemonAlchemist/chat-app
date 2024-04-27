@@ -24,6 +24,7 @@ const emptyNotice:INotification = {
     mode: "async",
     audience: "personal",
     access: "private",
+    date: "",
 };
 
 export const useNotificationData = useLocalStorage.object<INotification[]>("notifications", []);
@@ -55,6 +56,7 @@ export const useNotifications = () => {
         mode:     updateAttribute("mode"),
         audience: updateAttribute("audience"),
         access:   updateAttribute("access"),
+        date:     updateAttribute("date"),
     }
 
     return {notifications, update};

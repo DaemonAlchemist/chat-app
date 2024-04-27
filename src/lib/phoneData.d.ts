@@ -1,4 +1,4 @@
-export type Mime     = "image" | "text" | "video" | "audio";
+export type Mime     = "image" | "text" | "video" | "audio" | "message" | "alert" | "info" |"phone";
 export type Priority = "urgent" | "important" | "info";
 export type Mode     = "sync" | "async";
 export type Audience = "personal" | "group";
@@ -13,4 +13,5 @@ export declare interface INotification {
     mode: Mode;
     audience: Audience;
     access: Access;
+    date: string;
 }

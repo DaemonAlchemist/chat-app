@@ -65,7 +65,7 @@ export const ChatComponent = ({}:ChatProps) => {
                         &nbsp;
                         <ColorPicker color={msg.textColor} onChange={update.text(i)} />
                     </div>}
-                    <Editable value={msg.message} onChange={update.message(i)} placeholder="Message here" />
+                    <Editable value={msg.message} onChange={update.message(i)} placeholder="Message here" textArea />
                     {inlineControls && <DeleteBtn onClick={update.remove(i)} />}
                 </div>
                 {inlineControls && msg.side === "left" && <Button type="link" onClick={() => update.side(i)("right")}><ArrowRightOutlined /></Button>}

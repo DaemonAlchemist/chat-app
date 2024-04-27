@@ -3,4 +3,8 @@
 .image {
     overflow: hidden;
     border: solid 1px;
+    border-radius: $paddingSmall;
+    span {
+        font-size: 44px;
+    }
 }

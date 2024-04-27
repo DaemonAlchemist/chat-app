@@ -15,5 +15,8 @@
         position: absolute;
         top: 23px;
         width: 100%;
+        height: calc(100vh - 76px);
+        z-index: 999;
+        background-color: $overlayColor;
     }
 }

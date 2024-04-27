@@ -4,20 +4,84 @@
     background-color: $bgColor;
     width: calc(100% - $paddingSmall * 2);
     padding: $paddingSmall;
+    padding-top: 32px;
+    border-bottom-left-radius: $paddingSmall;
+    border-bottom-right-radius: $paddingSmall;
+    max-height: calc(100vh - 97px);
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: $bgColor $bgColorHigh;
 
     .notice {
+        position: relative;
+        background-color: $bgColorHigh;
+        border-radius: $paddingSmall;
         border: solid 1px;
         margin: $paddingSmall 0;
         min-height: 48px;
+        .controls {
+            text-align: center;
+            button {
+                margin: 0 $paddingMedium;
+            }
+        }
+        &.alert {
+            border-color: $alert;
+            background-color: $alertBg;
+            color: $alert;
+            .mime {background-color: $alertBg !important;}
+            hr {border-color: $alert;}
+            button {color: $alert;}
+        }
+        &.info {
+            .mime {background-color: $infoBg !important;}
+            hr {border-color: $infoBg;}
+            button {color: $info;}
+        }
+        &.text {
+            .mime {background-color: $textBg !important;}
+            hr {border-color: $textBg;}
+            button{ color: $text;}
+        }
+        &.message {
+            .mime {background-color: $messageBg !important;}
+            hr {border-color: $messageBg;}
+            button {color: $message;}
+        }
+        hr {
+            margin-top: -8px;
+            margin-bottom: 0;
+        }
+        a {
+            color: inherit !important;
+        }
         .icon {
             float: left;
             padding: $paddingSmall;
+            position: relative;
+            .mime {
+                position: absolute;
+                top: -4px;
+                left: -4px;
+                font-size: 24px;
+                background-color: $bgColorHigh;
+                border-radius: $paddingSmall;
+                border: solid 1px;
+                width: 32px;
+                height: 32px;
+                text-align: center;
+            }
         }
         .header {
             display: inline-block;
             padding: $paddingSmall 0;
+            width: calc(100% - 68px);
             input {
                 display: inline;
+            }
+            .dateEdit {
+                float: right;
+                text-align: right;
             }
         }
     }
