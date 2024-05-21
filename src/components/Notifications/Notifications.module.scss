@@ -46,6 +46,13 @@
             hr {border-color: $messageBg;}
             button {color: $message;}
         }
+        .images {
+            > img {
+                width: 64px;
+                height: 64px;
+                margin: 8px;
+            }
+        }
         hr {
             margin-top: -8px;
             margin-bottom: 0;

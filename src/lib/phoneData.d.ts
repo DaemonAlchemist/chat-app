@@ -14,4 +14,5 @@ export declare interface INotification {
     audience: Audience;
     access: Access;
     date: string;
+    images?: string[];
 }

@@ -54,6 +54,12 @@ export const NotificationsComponent = ({}:NotificationsProps) => {
                 <b><Editable value={notice.userName} onChange={update.userName(i)} autofit/></b><br/>
                 <Editable value={notice.header} onChange={update.header(i)} textArea/>
             </span>
+            <div className={styles.images}>
+                {(notice.images || []).map(img => <img src={img} />)}
+                <InlineControl>
+                    <Image src={null} onUpload={update.image.add(i)} width={44} height={44}/>
+                </InlineControl>
+            </div>
             <hr/>
             <div className={styles.controls}>
                 {notice.mime === "text" && <>

@@ -25,7 +25,11 @@ const emptyNotice:INotification = {
     audience: "personal",
     access: "private",
     date: "",
+    images: [],
 };
+
+const filterByIndex = <T>(index:number) => (_:T, i:number) => i !== index;
+const removeItem = <T>(index:number) => (old:T[]) => old.filter(filterByIndex(index));
 
 export const useNotificationData = useLocalStorage.object<INotification[]>("notifications", []);
 export const useNotifications = () => {
@@ -36,13 +40,27 @@ export const useNotifications = () => {
     }
 
     const remove = (index:number) => () => {
-        setNotifications(old => old.filter((_, i) => i !== index));
+        setNotifications(removeItem(index));
     }
 
     const updateAttribute = (field:keyof INotification) => (index:number) => (value:string) => {
         setNotifications(old => old.map((notice, i) => i !== index ? notice : {
             ...notice,
             [field]: value
+        }));
+    }
+
+    const addImage = (index:number) => (src:string) => {
+        setNotifications(old => old.map((notice, i) => i !== index ? notice : {
+            ...notice,
+            images: [...notice.images || [], src],
+        }));
+    }
+
+    const removeImage = (index:number) => (imgIndex:number) => {
+        setNotifications(old => old.map((notice, i) => i !== index ? notice : {
+            ...notice,
+            images: removeItem<string>(imgIndex)(notice.images || []),
         }));
     }
 
@@ -57,6 +75,10 @@ export const useNotifications = () => {
         audience: updateAttribute("audience"),
         access:   updateAttribute("access"),
         date:     updateAttribute("date"),
+        image: {
+            add: addImage,
+            remove: removeImage,
+        }
     }
 
     return {notifications, update};
