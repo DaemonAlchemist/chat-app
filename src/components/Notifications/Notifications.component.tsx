@@ -1,4 +1,6 @@
-import { AlertOutlined, CommentOutlined, EnvironmentOutlined, ForwardOutlined, InfoCircleOutlined, LikeOutlined, MailOutlined, MessageOutlined, PhoneFilled, PhoneOutlined, PictureOutlined, PlusOutlined, RollbackOutlined, ShareAltOutlined, SoundOutlined, VideoCameraOutlined } from "@ant-design/icons";
+import { AlertOutlined, CommentOutlined, EnvironmentOutlined, ForwardOutlined, InfoCircleOutlined, LikeOutlined, MailOutlined, MessageOutlined, PhoneFilled, PhoneOutlined, PictureOutlined, PlusOutlined, ShareAltOutlined, SoundOutlined, VideoCameraOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import clsx from "clsx";
 import { Index } from "ts-functional/dist/types";
 import { INotification, Mime } from "../../lib/phoneData";
 import { useNotifications, useNotificationsPanel } from "../../lib/state";
@@ -8,8 +10,6 @@ import { Image } from "../Image";
 import { InlineControl } from "../InlineControl";
 import { NotificationsProps } from "./Notifications.d";
 import styles from './Notifications.module.scss';
-import clsx from "clsx";
-import { Button } from "antd";
 
 export const NotificationsComponent = ({}:NotificationsProps) => {
     const [open] = useNotificationsPanel();
@@ -95,7 +95,8 @@ export const NotificationsComponent = ({}:NotificationsProps) => {
                     <Button type="link"><LikeOutlined /> Like</Button>
                 </>}
                 {notice.mime === "phone" && <>
-                    <Button type="link"><RollbackOutlined /> Reply</Button>
+                    <Button type="link"><MessageOutlined /> Reply</Button>
+                    <Button type="link"><SoundOutlined /> Voicemail</Button>
                     <Button type="link"><PhoneFilled/> Call</Button>
                 </>}
             </div>

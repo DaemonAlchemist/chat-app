@@ -1,0 +1,4 @@
+ToDo
+====
+Finalize colors
+Add move up/down for notices

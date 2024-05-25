@@ -21,6 +21,6 @@ export const EditableComponent = ({value, onChange, placeholder, textArea, autof
         onChange={onInputChange(onChange)}
         placeholder={placeholder}
         autoSize
-        style={autofit ? {width: `${width}ch`} : {}}
+        style={autofit ? {width: `calc(${width}ch + 8px)`} : {}}
     />;
 }

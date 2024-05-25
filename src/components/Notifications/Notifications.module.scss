@@ -1,7 +1,12 @@
 @import "@styles/globals.scss";
 
+.alertGradient {background: linear-gradient(180deg, $alertBgTop 0%, $alertBgBottom 100%);}
+.grayDient {background: linear-gradient(180deg, $noticeTopBgColor 0%, $noticeBottomBgColor 100%);}
+.blueGradient {background: linear-gradient(180deg, $noticePanelTopBgColor 0%, $noticePanelBottomBgColor 100%);}
+.iconGradient {background: linear-gradient(180deg, $iconTopBgColor 0%, $iconBottomBgColor 100%);}
+
 .notificationPanel {
-    background-color: $bgColor;
+    @extend .blueGradient;
     width: calc(100% - $paddingSmall * 2);
     padding: $paddingSmall;
     padding-top: 32px;
@@ -11,8 +16,8 @@
     scrollbar-color: $bgColor $bgColorHigh;
 
     .notice {
+        @extend .grayDient;
         position: relative;
-        background-color: $bgColorHigh;
         border-radius: $paddingSmall;
         border: solid 1px;
         margin: $paddingSmall 0;
@@ -23,33 +28,18 @@
                 margin: 0 $paddingMedium;
             }
         }
+        .mime {@extend .iconGradient;}
         &.alert {
+            @extend .alertGradient;
             border-color: $alert;
-            background-color: $alertBg;
             color: $alert;
-            .mime {background-color: $alertBg !important;}
+            .mime {@extend .alertGradient}
             hr {border-color: $alert;}
-            button {color: $alert;}
-        }
-        &.info {
-            .mime {background-color: $infoBg !important;}
-            hr {border-color: $infoBg;}
-            button {color: $info;}
-        }
-        &.text {
-            .mime {background-color: $textBg !important;}
-            hr {border-color: $textBg;}
-            button{ color: $text;}
-        }
-        &.message {
-            .mime {background-color: $messageBg !important;}
-            hr {border-color: $messageBg;}
-            button {color: $message;}
+            button {color: $alert !important;}
         }
         .images {
             > img {
-                width: 64px;
-                height: 64px;
+                width: calc(100% - 16px) !important;
                 margin: 8px;
             }
         }
@@ -57,8 +47,8 @@
             margin-top: -8px;
             margin-bottom: 0;
         }
-        a {
-            color: inherit !important;
+        button {
+            color: $text !important;
         }
         .icon {
             float: left;
